@@ -41,7 +41,9 @@ open class SwipeTableViewCell: UITableViewCell {
     
     let elasticScrollRatio: CGFloat = 0.4
     var scrollRatio: CGFloat = 1.0
-    
+  
+    open var tapToSwipe: Bool = false
+  
     /// :nodoc:
     override open var center: CGPoint {
         didSet {
@@ -317,11 +319,15 @@ open class SwipeTableViewCell: UITableViewCell {
     }
 
     func handleTap(gesture: UITapGestureRecognizer) {
+      if tapToSwipe {
         if isEditing {
             hideSwipe(animated: true)
         } else {
             showSwipe(orientation: .right)
         }
+      } else {
+        hideSwipe(animated: true)
+      }
     }
     
     func handleTablePan(gesture: UIPanGestureRecognizer) {
@@ -494,9 +500,12 @@ extension SwipeTableViewCell {
                 tableView?.hideSwipeCell()
             }
 
+          if tapToSwipe {
             return true
-            //let cell = tableView?.swipeCells.first(where: { $0.state.isActive })
-            //return cell == nil ? false : true
+          } else {
+            let cell = tableView?.swipeCells.first(where: { $0.state.isActive })
+            return cell == nil ? false : true
+          }
         }
         
         if gestureRecognizer == panGestureRecognizer,

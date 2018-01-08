@@ -116,7 +116,7 @@ open class SwipeTableViewCell: UITableViewCell {
         }
     }
     
-    func handlePan(gesture: UIPanGestureRecognizer) {
+    @objc func handlePan(gesture: UIPanGestureRecognizer) {
         guard isEditing == false else { return }
         guard let target = gesture.view else { return }
         
@@ -254,8 +254,10 @@ open class SwipeTableViewCell: UITableViewCell {
         } else {
             actionsView.leftAnchor.constraint(equalTo: rightAnchor).isActive = true
         }
-        
-        self.actionsView = actionsView
+		
+		actionsView.setNeedsUpdateConstraints()
+		
+		self.actionsView = actionsView
 
         state = .dragging
         
@@ -318,7 +320,7 @@ open class SwipeTableViewCell: UITableViewCell {
         }
     }
 
-    func handleTap(gesture: UITapGestureRecognizer) {
+    @objc func handleTap(gesture: UITapGestureRecognizer) {
         if tapToSwipe {
             if isEditing {
                 hideSwipe(animated: true)
@@ -330,7 +332,7 @@ open class SwipeTableViewCell: UITableViewCell {
         }
     }
     
-    func handleTablePan(gesture: UIPanGestureRecognizer) {
+    @objc func handleTablePan(gesture: UIPanGestureRecognizer) {
         if gesture.state == .began {
             hideSwipe(animated: true)
         }
@@ -399,7 +401,7 @@ extension SwipeTableViewCell {
 
     func reset() {
         state = .center
-        
+        clipsToBounds = false
         actionsView?.removeFromSuperview()
         actionsView = nil
     }

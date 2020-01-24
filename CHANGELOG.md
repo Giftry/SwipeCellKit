@@ -2,7 +2,162 @@
 
 `SwipeCellKit` adheres to [Semantic Versioning](http://semver.org/).
 
-## [2.0.1](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.0.0)
+## [2.7.1](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.7.1)
+
+#### Added
+
+- Support for Xcode 10.3+ (#353)
+
+---
+
+## [2.7.0](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.7.0)
+
+#### Added
+
+- Support for updated SPM (Swift Package Manager) for Xcode 11+ (#325)
+- Support for iOS 13 Dark Mode (#337)
+
+#### Fixed
+
+- Fixed hit test issue related to hidden cells (#314)
+- Fixed cell reuse layout issue (#335)
+- Fixed issue where a deleted cell that was being cell reused has the contentView offset incorrectly. (#355)
+- Fixed issue where on iOS 13 UICollectionViewCell does not perform swipe animation. (#333)
+
+---
+
+## [2.6.0](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.6.0)
+
+#### Added
+
+- SwipeCellKit is now using Swift 5
+
+---
+
+## [2.5.4](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.5.4)
+
+#### Fixed
+
+- Fixed Carthage when building with Xcode 10.2 (#297)
+
+---
+
+## [2.5.2](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.5.2)
+
+#### Fixed
+
+- Added support for Xcode 10.2 (#279, #283)
+- Compatibility with applications using Swift 5 (see Mail App Example)
+
+---
+
+## [2.5.1](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.5.1)
+
+#### Fixed
+
+- Cells do not hide correctly when also using non-`SwipeCollectionViewCell` cells in `UICollectionView`. (#265)
+
+---
+
+## [2.5.0](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.5.0)
+
+#### Fixed
+
+- Update to Swift 4.2 and Xcode 10 Support (#215)
+
+---
+
+## [2.4.3](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.4.3)
+
+#### Fixed
+
+- Fix issue where swipe cell does not return to neutral position correctly when swipping cell very quickly (#215)
+
+---
+
+## [2.4.2](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.4.2)
+
+#### Fixed
+
+- Fix swipe action position when rotating a UITableView/UICollectionView with safe area insets.
+- Fix issue where gesture cancellation causes swipe cell to remain in dragging state in a non-left, right or centre x position.
+- Fix issue where expansion may trigger when swiping in the expansion zone very quickly.
+
+---
+
+## [2.4.1](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.4.1)
+
+#### Fixed
+
+- Fix issue with swipe action handler not being invoked correctly at all times (#204, #205)
+
+---
+
+## [2.4.0](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.4.0)
+
+#### Added
+
+- `UICollectionView` support. You can now add swipe actions to a `UICollectionViewCell` by using the `SwipeCollectionViewCell` (#4)
+
+---
+
+## [2.3.2](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.3.2)
+
+#### Fixed
+
+- Add default implementation for `visibleRect(for tableView: UITableView)` as its optional (#201)
+
+---
+
+## [2.3.1](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.3.1)
+
+#### Fixed
+
+- Fix issue where swiping a cell does not work while another cell is open (#197)
+
+---
+
+## [2.3.0](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.3.0)
+
+#### Added
+
+- Support for vertically centered swipe actions for tall cells. (#186)
+
+#### Fixed
+
+- Resolved issue where touching cell in swipe expantion zone resulted in immediate cell expansion (#194)
+- Reselect swipped cell if it was previously selected (#58)
+
+---
+
+## [2.2.0](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.2.0)
+
+#### Added
+
+- Swift 4.1 Support. (#181)
+- Allow mix use of only image or text label actions. (#139)
+
+#### Fixed
+
+- Fix issue where multiple `SwipeTableViewCells` can be swipped simultaneously. (#57)
+
+---
+
+## [2.1.0](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.1.0)
+
+#### Added
+
+- Add support for safeAreaInsets (i.e. iPhone X) (#159, #119)
+
+#### Fixed
+
+- Update README to fix an error with how to fulfill a delete row operation
+- Fix crash related to `UIAccessablilityCustomAction` if no accessability text is set on action image, or action label. (#156)
+- Fix issue where SwipeActionButton.maximumButtonWidth is not respected when its value is below the default/computed minimumButtonWidth (#150)
+
+---
+
+## [2.0.1](https://github.com/jerkoch/SwipeCellKit/releases/tag/2.0.1)
 
 #### Fixed
 
